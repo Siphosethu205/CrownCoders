@@ -1,0 +1,70 @@
+<resources>
+
+    <color name="primary_green">#2E7D32</color>
+    <color name="primary_green_light">#4CAF50</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#FF000000</color>
+
+
+
+    <color name="status_blue">#0277BD</color>
+    <color name="icon_blue_bg">#E3F2FD</color>
+    <color name="icon_green_bg">#E8F5E9</color>
+    <color name="icon_yellow_bg">#FFF8E1</color>
+    <color name="icon_red_bg">#FFEBEE</color>
+
+    <color name="divider_grey">#E2E8F0</color>
+    <color name="background_grey">#F5F7FA</color>
+    <color name="text_dark">#1F2937</color>
+    <color name="text_grey">#6B7280</color>
+    <color name="logout_red">#D32F2F</color>
+
+    <color name="primary_color">#2196F3</color>
+    <color name="colorPrimaryDark">#1976D2</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="brand_green">#4CAF50</color>
+    <color name="brand_blue">#1976D2</color>
+    <color name="text_dark2">#102A43</color>
+    <color name="text_subtitle">#627D98</color>
+    <color name="card_bg">#F0F4F8</color>
+    <color name="spinner_border">#BCCCDC</color>
+    <color name="gradient_start">#4CAF50</color>
+    <color name="gradient_end">#0277BD</color>
+    <color name="icon_bg">#D9E2EC</color>
+    <color name="red">#FF0000</color>
+    <color name="yellow">#FFEB3B</color>
+    <color name="green">#4CAF50</color>
+    <color name="gray">#9E9E9E</color>
+    <color name="text_gray">#757575</color>
+    <color name="border_gray">#E0E0E0</color>
+
+
+        <color name="bg_screen">#F4F7F9</color>
+
+        <color name="text_main">#1A202C</color>
+        <color name="text_sub">#718096</color>
+
+        <color name="blue_light">#E6F0FF</color>
+        <color name="blue_dark">#2B6CB0</color>
+        <color name="green_light">#E6FFFA</color>
+        <color name="green_dark">#2F855A</color>
+        <color name="orange_light">#FFFAF0</color>
+        <color name="orange_dark">#C05621</color>
+        <color name="red_light">#FFF5F5</color>
+        <color name="red_dark">#C53030</color>
+
+        <color name="gray_pill">#E2E8F0</color>
+        <color name="gray_pill_text">#475569</color>
+        <color name="orange_pill">#ED8936</color>
+
+    <color name="splash_bg">#0F172A</color>
+
+    <!-- Selected states for Urgency buttons -->
+    <color name="urgency_standard_bg_selected">#80DEEA</color> <!-- Light Cyan/Teal -->
+    <color name="urgency_critical_bg_selected">#FFCC80</color> <!-- Light Orange -->
+    <color name="urgency_extreme_bg_selected">#EF9A9A</color>  <!-- Light Red -->
+
+    <color name="chip_filter_bg">#E6F8FA</color>
+
+
+</resources>

@@ -1,0 +1,668 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_screen_bg"
+    android:fillViewport="true"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="24dp">
+
+        <!-- Brand Header -->
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/aquacom_logo_transparent"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="4dp"
+            android:contentDescription="AquaCom Logo"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="A q u a c o m"
+            android:textColor="#0A2A33"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.15"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your Water Management Solution"
+            android:textColor="#5A7D8A"
+            android:textSize="14sp"
+            android:layout_marginBottom="24dp"
+            android:fontFamily="sans-serif-medium"/>
+
+        <!-- Main Form Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@android:color/white"
+            app:strokeWidth="1dp"
+            app:strokeColor="#D3EFF5"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <!-- Card Title -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="6dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Create "
+                        android:textColor="#0A2A33"
+                        android:textSize="26sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Account"
+                        android:textColor="#00A3B8"
+                        android:textSize="26sp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Join AquaCom to report water issues and help your community."
+                    android:textColor="#5A7D8A"
+                    android:textSize="13sp"
+                    android:layout_marginBottom="16dp"
+                    android:lineSpacingMultiplier="1.2"/>
+
+                <!-- Error Banner -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardErrorBanner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="#FECDD3"
+                    app:strokeWidth="1dp"
+                    app:cardBackgroundColor="#FFF1F2"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:padding="12dp">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@android:drawable/ic_dialog_alert"
+                            app:tint="#B91C1C"
+                            android:layout_marginEnd="10dp"
+                            android:contentDescription="Error"/>
+
+                        <TextView
+                            android:id="@+id/tvRegisterError"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text=""
+                            android:textColor="#7F1D1D"
+                            android:textSize="13sp"
+                            android:lineSpacingExtra="2dp"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- ============ FULL NAME ============ -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="14dp">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@drawable/ic_container_bg_aqua"
+                        android:src="@android:drawable/ic_menu_myplaces"
+                        android:padding="12dp"
+                        android:layout_marginEnd="12dp"
+                        app:tint="#00A3B8"
+                        android:contentDescription="Name Icon"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:background="@drawable/input_field_bg_aqua"
+                        android:paddingStart="14dp"
+                        android:paddingEnd="14dp"
+                        android:paddingTop="6dp"
+                        android:paddingBottom="6dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Full Name *"
+                            android:textColor="#5A7D8A"
+                            android:textSize="11sp"
+                            android:textStyle="bold"/>
+
+                        <EditText
+                            android:id="@+id/editTextFullName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:hint="John Doe"
+                            android:textColorHint="#A0C4D0"
+                            android:textSize="15sp"
+                            android:textColor="#0A2A33"
+                            android:inputType="textPersonName|textCapWords"
+                            android:imeOptions="actionNext"
+                            android:autofillHints="name"
+                            android:padding="0dp"
+                            android:layout_marginTop="2dp"
+                            android:importantForAutofill="yes"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- ============ EMAIL ============ -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="14dp">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@drawable/ic_container_bg_aqua"
+                        android:src="@android:drawable/ic_dialog_email"
+                        android:padding="12dp"
+                        android:layout_marginEnd="12dp"
+                        app:tint="#00A3B8"
+                        android:contentDescription="Email Icon"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:background="@drawable/input_field_bg_aqua"
+                        android:paddingStart="14dp"
+                        android:paddingEnd="14dp"
+                        android:paddingTop="6dp"
+                        android:paddingBottom="6dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Email Address *"
+                            android:textColor="#5A7D8A"
+                            android:textSize="11sp"
+                            android:textStyle="bold"/>
+
+                        <EditText
+                            android:id="@+id/editTextEmail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:hint="email@example.com"
+                            android:textColorHint="#A0C4D0"
+                            android:textSize="15sp"
+                            android:textColor="#0A2A33"
+                            android:inputType="textEmailAddress"
+                            android:imeOptions="actionNext"
+                            android:autofillHints="emailAddress"
+                            android:padding="0dp"
+                            android:layout_marginTop="2dp"
+                            android:importantForAutofill="yes"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- ============ PHONE ============ -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="14dp">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@drawable/ic_container_bg_aqua"
+                        android:src="@drawable/ic_phone"
+                        android:padding="12dp"
+                        android:layout_marginEnd="12dp"
+                        app:tint="#00A3B8"
+                        android:contentDescription="Phone Icon"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:background="@drawable/input_field_bg_aqua"
+                        android:paddingStart="14dp"
+                        android:paddingEnd="14dp"
+                        android:paddingTop="6dp"
+                        android:paddingBottom="6dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Phone Number *"
+                            android:textColor="#5A7D8A"
+                            android:textSize="11sp"
+                            android:textStyle="bold"/>
+
+                        <EditText
+                            android:id="@+id/editTextPhone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:hint="0712345678"
+                            android:textColorHint="#A0C4D0"
+                            android:textSize="15sp"
+                            android:textColor="#0A2A33"
+                            android:inputType="phone"
+                            android:imeOptions="actionNext"
+                            android:autofillHints="phone"
+                            android:maxLength="10"
+                            android:padding="0dp"
+                            android:layout_marginTop="2dp"
+                            android:importantForAutofill="yes"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- ============ PASSWORD WITH STRENGTH METER ============ -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="6dp">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@drawable/ic_container_bg_aqua"
+                        android:src="@drawable/ic_lock"
+                        android:padding="12dp"
+                        android:layout_marginEnd="12dp"
+                        app:tint="#00A3B8"
+                        android:contentDescription="Lock Icon"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:background="@drawable/input_field_bg_aqua"
+                        android:paddingStart="14dp"
+                        android:paddingEnd="14dp"
+                        android:gravity="center_vertical">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:paddingTop="6dp"
+                            android:paddingBottom="6dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Password * (min 8 chars)"
+                                android:textColor="#5A7D8A"
+                                android:textSize="11sp"
+                                android:textStyle="bold"/>
+
+                            <EditText
+                                android:id="@+id/editTextPassword"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@null"
+                                android:hint="Aa1!aaaa"
+                                android:textColorHint="#A0C4D0"
+                                android:textSize="15sp"
+                                android:textColor="#0A2A33"
+                                android:inputType="textPassword"
+                                android:imeOptions="actionNext"
+                                android:autofillHints="newPassword"
+                                android:padding="0dp"
+                                android:layout_marginTop="2dp"
+                                android:importantForAutofill="yes"/>
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/ivTogglePassword"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@android:drawable/ic_menu_view"
+                            app:tint="#00A3B8"
+                            android:layout_marginStart="8dp"
+                            android:alpha="0.85"
+                            android:contentDescription="Toggle Password Visibility"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Password Strength Meter -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginBottom="6dp"
+                    android:weightSum="4">
+
+                    <View
+                        android:id="@+id/strengthBar1"
+                        android:layout_width="0dp"
+                        android:layout_height="4dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="3dp"
+                        android:background="#E6F8FA"/>
+                    <View
+                        android:id="@+id/strengthBar2"
+                        android:layout_width="0dp"
+                        android:layout_height="4dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="3dp"
+                        android:background="#E6F8FA"/>
+                    <View
+                        android:id="@+id/strengthBar3"
+                        android:layout_width="0dp"
+                        android:layout_height="4dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="3dp"
+                        android:background="#E6F8FA"/>
+                    <View
+                        android:id="@+id/strengthBar4"
+                        android:layout_width="0dp"
+                        android:layout_height="4dp"
+                        android:layout_weight="1"
+                        android:background="#E6F8FA"/>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvPasswordStrength"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginBottom="14dp"
+                    android:text=""
+                    android:textColor="#5A7D8A"
+                    android:textSize="11sp"
+                    android:textStyle="italic"/>
+
+                <!-- ============ CONFIRM PASSWORD ============ -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="14dp">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@drawable/ic_container_bg_aqua"
+                        android:src="@drawable/ic_lock"
+                        android:padding="12dp"
+                        android:layout_marginEnd="12dp"
+                        app:tint="#00A3B8"
+                        android:contentDescription="Lock Icon"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:background="@drawable/input_field_bg_aqua"
+                        android:paddingStart="14dp"
+                        android:paddingEnd="14dp"
+                        android:gravity="center_vertical">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:paddingTop="6dp"
+                            android:paddingBottom="6dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Confirm Password *"
+                                android:textColor="#5A7D8A"
+                                android:textSize="11sp"
+                                android:textStyle="bold"/>
+
+                            <EditText
+                                android:id="@+id/editTextConfirmPassword"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@null"
+                                android:hint="Aa1!aaaa"
+                                android:textColorHint="#A0C4D0"
+                                android:textSize="15sp"
+                                android:textColor="#0A2A33"
+                                android:inputType="textPassword"
+                                android:imeOptions="actionDone"
+                                android:autofillHints="newPassword"
+                                android:padding="0dp"
+                                android:layout_marginTop="2dp"
+                                android:importantForAutofill="yes"/>
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/ivToggleConfirmPassword"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@android:drawable/ic_menu_view"
+                            app:tint="#00A3B8"
+                            android:layout_marginStart="8dp"
+                            android:alpha="0.85"
+                            android:contentDescription="Toggle Confirm Password Visibility"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- ============ TERMS & PRIVACY CHECKBOX ============ -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="top"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="20dp">
+
+                    <CheckBox
+                        android:id="@+id/cbTerms"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#00A3B8"
+                        android:layout_marginEnd="4dp"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingTop="10dp"
+                        android:lineSpacingExtra="2dp"
+                        android:text="I agree to the Terms of Service and Privacy Policy"
+                        android:textColor="#5A7D8A"
+                        android:textSize="12sp"/>
+
+                    <TextView
+                        android:id="@+id/tvTermsLink"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="10dp"
+                        android:paddingStart="4dp"
+                        android:text="View"
+                        android:textColor="#00A3B8"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:clickable="true"
+                        android:focusable="true"/>
+                </LinearLayout>
+
+                <!-- Register Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonRegister"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:text="Create Account"
+                    android:textAllCaps="false"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:background="@drawable/btn_gradient_aqua"
+                    app:backgroundTint="@null"
+                    app:cornerRadius="27dp"
+                    android:layout_marginBottom="16dp"/>
+
+                <!-- Divider -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="16dp">
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1"
+                        android:background="#D3EFF5"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="OR"
+                        android:textColor="#A0C4D0"
+                        android:textSize="12sp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:textStyle="bold"/>
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1"
+                        android:background="#D3EFF5"/>
+                </LinearLayout>
+
+                <!-- Login Link -->
+                <LinearLayout
+                    android:id="@+id/btnTopLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:background="@drawable/input_field_bg_aqua"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_user_plus"
+                        app:tint="#00A3B8"
+                        android:contentDescription="Login Icon"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Already have an account?"
+                            android:textColor="#5A7D8A"
+                            android:textSize="11sp"/>
+                        <TextView
+                            android:id="@+id/textViewLogin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Log In"
+                            android:textColor="#00A3B8"
+                            android:textStyle="bold"
+                            android:textSize="13sp"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="›"
+                        android:textColor="#00A3B8"
+                        android:textSize="20sp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Slogan -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:alpha="0.6">
+            <View
+                android:layout_width="30dp"
+                android:layout_height="1dp"
+                android:background="#00A3B8"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="  EVERY DROP COUNTS  "
+                android:textColor="#00A3B8"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.1"/>
+            <View
+                android:layout_width="30dp"
+                android:layout_height="1dp"
+                android:background="#00A3B8"/>
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminateTint="#00E5FF"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+</ScrollView>

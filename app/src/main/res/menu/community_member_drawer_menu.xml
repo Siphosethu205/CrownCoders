@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_drawer_profile"
+        android:icon="@drawable/ic_profile"
+        android:title="Profile Settings" />
+
+    <item
+        android:id="@+id/nav_drawer_my_reports"
+        android:icon="@android:drawable/ic_menu_agenda"
+        android:title="My Water Status Updates" />
+
+    <item
+        android:id="@+id/nav_drawer_my_emergency"
+        android:icon="@android:drawable/ic_dialog_alert"
+        android:title="My Emergency Requests" />
+
+    <!-- ✅ NEW -->
+    <item
+        android:id="@+id/nav_drawer_my_issues"
+        android:icon="@android:drawable/ic_menu_manage"
+        android:title="My Reported Issues" />
+
+    <item
+        android:id="@+id/nav_drawer_about"
+        android:icon="@drawable/ic_about"
+        android:title="About Us" />
+
+    <item
+        android:id="@+id/nav_drawer_logout"
+        android:icon="@drawable/ic_logout"
+        android:title="Logout" />
+
+</menu>

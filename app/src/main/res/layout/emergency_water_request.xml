@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF">
+
+    <!-- Top App Bar (Lighter background, dark blue text, custom back arrow) -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#E6F8FA"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:navigationIconTint="#0D47A1"
+        app:title="Emergency Request"
+        app:titleTextColor="#0D47A1" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Clean, concise intro -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Submit this form only if you have no water. Help will be dispatched immediately."
+                android:textSize="14sp"
+                android:textColor="#5A7D8A"
+                android:lineSpacingExtra="4dp"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Main Form Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="4dp"
+                app:strokeColor="#E6F8FA"
+                app:strokeWidth="1dp"
+                app:cardBackgroundColor="#FFFFFF">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <!-- Location Section -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Location"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#0A2A33"
+                        android:layout_marginBottom="10dp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilZoneName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="28dp"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                        app:boxBackgroundColor="#F8FDFE"
+                        app:boxStrokeColor="#00E5FF"
+                        app:hintTextColor="#00A3B8"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        app:endIconMode="custom"
+                        app:endIconDrawable="@drawable/ic_gps"
+                        app:endIconTint="#00E5FF"
+                        app:endIconContentDescription="Detect GPS">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etZoneName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPostalAddress"
+                            android:textSize="15sp"
+                            android:textColor="#0A2A33"
+                            android:hint="Enter your address or suburb"
+                            android:importantForAutofill="no" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Urgency Section -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Urgency Level"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#0A2A33"
+                        android:layout_marginBottom="12dp" />
+
+                    <!-- Stacked Urgency Buttons -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <!-- Standard -->
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnUrgencyLow"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:layout_marginBottom="8dp"
+                            android:text="Standard (Within 24h)"
+                            android:textSize="13sp"
+                            android:textColor="#00A3B8"
+                            app:backgroundTint="@color/urgency_standard_bg"
+                            app:strokeColor="#00E5FF"
+                            app:cornerRadius="16dp"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp" />
+
+                        <!-- Critical -->
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnUrgencyMedium"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:layout_marginBottom="8dp"
+                            android:text="Critical (Within 6h)"
+                            android:textSize="13sp"
+                            android:textColor="#E65100"
+                            app:backgroundTint="@color/urgency_critical_bg"
+                            app:strokeColor="#F57C00"
+                            app:cornerRadius="16dp"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp" />
+
+                        <!-- Extreme -->
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnUrgencyHigh"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:text="Extreme (Immediate)"
+                            android:textSize="13sp"
+                            android:textColor="#B91C1C"
+                            app:backgroundTint="@color/urgency_extreme_bg"
+                            app:strokeColor="#DC2626"
+                            app:cornerRadius="16dp"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp" />
+
+                    </LinearLayout>
+
+                    <!-- Hint (Added back for UX guidance) -->
+                    <TextView
+                        android:id="@+id/tvUrgencyHint"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Tap a level above to select"
+                        android:textSize="12sp"
+                        android:textColor="#A0C4D0"
+                        android:gravity="center"
+                        android:layout_marginTop="12dp" />
+
+                    <!-- Validation error text (hidden by default) -->
+                    <TextView
+                        android:id="@+id/tvUrgencyError"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Please select an urgency level."
+                        android:textSize="12sp"
+                        android:textColor="#B91C1C"
+                        android:layout_marginTop="8dp"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Progress indicator (hidden by default) -->
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="16dp"
+                android:visibility="gone" />
+
+            <!-- Warning Text -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="16dp">
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@android:drawable/ic_dialog_alert"
+                    app:tint="#DC2626"
+                    android:layout_marginEnd="8dp"
+                    android:contentDescription="Warning" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="False reports delay help for those in need."
+                    android:textSize="12sp"
+                    android:textColor="#5A7D8A" />
+            </LinearLayout>
+
+            <!-- Submit Button (Modern Red Gradient, Pill Shaped) -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSubmitEmergency"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Submit Request"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.02"
+                android:background="@drawable/btn_gradient_red"
+                app:backgroundTint="@null"
+                app:cornerRadius="28dp"
+                app:elevation="4dp"
+                android:stateListAnimator="@null" />
+
+            <!-- Footer -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A dispatcher will contact you shortly."
+                android:textSize="12sp"
+                android:textColor="#A0C4D0"
+                android:gravity="center"
+                android:layout_marginTop="16dp" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

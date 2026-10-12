@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Bright Teal for the selected tab (pops against the dark background) -->
+    <item android:color="#00E5FF" android:state_checked="true" />
+    <!-- White for unselected tabs -->
+    <item android:color="#FFFFFF" android:state_checked="false" />
+</selector>

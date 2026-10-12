@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">CommunityMember2.0</string>
+
+    <!-- Welcome Page -->
+    <string name="welcome_title">Welcome to </string>
+    <string name="btn_continue_arrow">→  CONTINUE</string>
+    <string name="welcome_subtitle">Your Water Management Solution</string>
+    <string name="welcome_slogan">Clean Water  •  Better Communities  •  A Healthier Tomorrow</string>
+    <string name="choose_language">Choose Language</string>
+    <string name="choose_role">Choose Your Role</string>
+    <string name="role_tanker">Tanker</string>
+    <string name="role_admin">Admin</string>
+    <string name="role_community">Community Member</string>
+    <string name="btn_continue">Continue</string>
+
+    <!-- Login Page -->
+    <string name="login_title">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="btn_login">Login</string>
+    <string name="no_account">Don\'t have an account? Register</string>
+    <string name="login_success">Login Successful!</string>
+    <string name="login_failed">Login Failed</string>
+
+    <!-- Register Page -->
+    <string name="register_title">Create Account</string>
+    <string name="full_name">Full Name</string>
+    <string name="phone">Phone Number</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="btn_register">Register</string>
+    <string name="have_account">Already have an account? Login</string>
+    <string name="register_success">Registration Successful!</string>
+    <string name="register_failed">Registration Failed</string>
+
+    <string name="aquacom_drop">Aquacom water drop</string>
+
+</resources>

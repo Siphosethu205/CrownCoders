@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <!-- Unified Header -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E6F8FA"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#E6F8FA"
+            app:navigationIcon="@drawable/ic_arrow_back"
+            app:navigationIconTint="#0D47A1"
+            app:title="Water Status"
+            app:titleTextColor="#0D47A1"
+            app:titleTextAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        android:clipToPadding="false"
+        android:paddingBottom="80dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- Intro Title + Subtitle -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Report the water situation"
+                android:textSize="22sp"
+                android:textColor="#0A2A33"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Your report helps your neighbours know what to expect and alerts local authorities to shortages."
+                android:textSize="14sp"
+                android:textColor="#5A7D8A"
+                android:lineSpacingExtra="4dp"
+                android:layout_marginBottom="28dp" />
+
+            <!-- MAIN FORM CARD -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="4dp"
+                app:strokeColor="#E6F8FA"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <!-- SECTION 1: LOCATION -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="12dp">
+
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:src="@android:drawable/ic_menu_mylocation"
+                            app:tint="#00A3B8"
+                            android:layout_marginEnd="8dp"
+                            android:contentDescription="Location" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Where is this report about?"
+                            android:textColor="#0A2A33"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilZoneName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="32dp"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                        app:boxBackgroundColor="#F8FDFE"
+                        app:boxStrokeColor="#00E5FF"
+                        app:hintTextColor="#00A3B8"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        app:endIconMode="custom"
+                        app:endIconDrawable="@android:drawable/ic_menu_mylocation"
+                        app:endIconTint="#00E5FF"
+                        app:endIconContentDescription="Detect GPS">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etZoneName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPostalAddress"
+                            android:textSize="15sp"
+                            android:textColor="#0A2A33"
+                            android:hint="Enter your address or suburb"
+                            android:importantForAutofill="no" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- SECTION 2: WATER STATUS -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="12dp">
+
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:src="@drawable/ic_water_reports"
+                            app:tint="#00A3B8"
+                            android:layout_marginEnd="8dp"
+                            android:contentDescription="Status" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="What is the water status?"
+                            android:textColor="#0A2A33"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <!-- Stacked Status Buttons with fill-on-select -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <!-- No Water -->
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnStatusRed"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="56dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="No Water (Dry Taps)"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/water_status_text_no_water"
+                            app:backgroundTint="@color/water_status_bg_no_water"
+                            app:strokeColor="#DC2626"
+                            app:strokeWidth="1.5dp"
+                            app:cornerRadius="16dp"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp" />
+
+                        <!-- Low Pressure -->
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnStatusYellow"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="56dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="Low Pressure (Trickling)"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/water_status_text_low"
+                            app:backgroundTint="@color/water_status_bg_low"
+                            app:strokeColor="#F57C00"
+                            app:strokeWidth="1.5dp"
+                            app:cornerRadius="16dp"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp" />
+
+                        <!-- Water Available -->
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnStatusGreen"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="56dp"
+                            android:text="Water Available (Normal Flow)"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/water_status_text_available"
+                            app:backgroundTint="@color/water_status_bg_available"
+                            app:strokeColor="#00E5FF"
+                            app:strokeWidth="1.5dp"
+                            app:cornerRadius="16dp"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp" />
+
+                    </LinearLayout>
+
+                    <!-- Validation error -->
+                    <TextView
+                        android:id="@+id/tvStatusError"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Please select a water status level."
+                        android:textSize="12sp"
+                        android:textColor="#B91C1C"
+                        android:layout_marginTop="12dp"
+                        android:visibility="gone" />
+
+                    <!-- Hint -->
+                    <TextView
+                        android:id="@+id/tvStatusHint"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Tap a status above to select"
+                        android:textSize="12sp"
+                        android:textColor="#A0C4D0"
+                        android:gravity="center"
+                        android:layout_marginTop="16dp" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Progress -->
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="16dp"
+                android:indeterminateTint="#00E5FF"
+                android:visibility="gone" />
+
+            <!-- SUBMIT BUTTON -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSubmitReport"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Submit Report"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.02"
+                android:background="@drawable/btn_gradient_aqua"
+                app:backgroundTint="@null"
+                app:cornerRadius="28dp"
+                app:elevation="4dp"
+                android:stateListAnimator="@null" />
+
+            <!-- Footer -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Reports help local authorities and your neighbours respond faster."
+                android:textSize="12sp"
+                android:textColor="#A0C4D0"
+                android:gravity="center"
+                android:layout_marginTop="16dp"
+                android:lineSpacingExtra="2dp" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppBottomNavIndicator" parent="">
+        <!-- Translucent Teal (approx 20% opacity) creates a soft glowing hover effect -->
+        <item name="android:color">#3300E5FF</item>
+    </style>
+
+</resources>

@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E6F8FA"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#E6F8FA"
+            app:navigationIcon="@drawable/ic_arrow_back"
+            app:navigationIconTint="#0D47A1"
+            app:title="Audit Logs"
+            app:titleTextColor="#0D47A1"
+            app:titleTextAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
+
+        <!-- Search bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="12dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Search by user, detail..."
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                app:boxStrokeColor="#00E5FF"
+                app:boxStrokeWidth="1dp"
+                app:boxStrokeWidthFocused="2dp"
+                app:hintTextColor="#00A3B8"
+                app:cornerRadius="12dp"
+                app:startIconDrawable="@android:drawable/ic_menu_search"
+                app:startIconTint="#A0C4D0">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etSearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionSearch"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:textColor="#0A2A33"
+                    android:textColorHint="#A0C4D0"
+                    android:textSize="14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Date range button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDateRange"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginStart="8dp"
+                android:minWidth="0dp"
+                android:paddingHorizontal="14dp"
+                android:text="All"
+                android:textColor="#00A3B8"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:cornerRadius="12dp"
+                app:icon="@android:drawable/ic_menu_my_calendar"
+                app:iconTint="#00E5FF"
+                app:iconSize="18dp"
+                app:strokeColor="#00E5FF" />
+        </LinearLayout>
+
+        <!-- Category chips row -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#E6F8FA"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="12dp"
+            android:scrollbars="none"
+            android:overScrollMode="never">
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroupFilters"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:chipSpacingHorizontal="6dp"
+                app:singleLine="true"
+                app:singleSelection="true"
+                app:selectionRequired="true">
+
+                <!-- Cyan outline chips with transparent background -->
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipAll"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="All"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/urgency_text_color"
+                    app:chipBackgroundColor="@color/urgency_standard_bg"
+                    app:chipSurfaceColor="@android:color/transparent"
+                    app:chipStrokeWidth="1.5dp"
+                    app:chipStrokeColor="#00E5FF" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipWater"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Water"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/urgency_text_color"
+                    app:chipBackgroundColor="@color/urgency_standard_bg"
+                    app:chipSurfaceColor="@android:color/transparent"
+                    app:chipStrokeWidth="1.5dp"
+                    app:chipStrokeColor="#00E5FF" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipEmergency"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Emergency"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/urgency_text_color"
+                    app:chipBackgroundColor="@color/urgency_standard_bg"
+                    app:chipSurfaceColor="@android:color/transparent"
+                    app:chipStrokeWidth="1.5dp"
+                    app:chipStrokeColor="#00E5FF" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipNotifications"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Notifications"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/urgency_text_color"
+                    app:chipBackgroundColor="@color/urgency_standard_bg"
+                    app:chipSurfaceColor="@android:color/transparent"
+                    app:chipStrokeWidth="1.5dp"
+                    app:chipStrokeColor="#00E5FF" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipAssignments"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Assignments"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/urgency_text_color"
+                    app:chipBackgroundColor="@color/urgency_standard_bg"
+                    app:chipSurfaceColor="@android:color/transparent"
+                    app:chipStrokeWidth="1.5dp"
+                    app:chipStrokeColor="#00E5FF" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipTanks"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tanks"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/urgency_text_color"
+                    app:chipBackgroundColor="@color/urgency_standard_bg"
+                    app:chipSurfaceColor="@android:color/transparent"
+                    app:chipStrokeWidth="1.5dp"
+                    app:chipStrokeColor="#00E5FF" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipUsers"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Users"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/urgency_text_color"
+                    app:chipBackgroundColor="@color/urgency_standard_bg"
+                    app:chipSurfaceColor="@android:color/transparent"
+                    app:chipStrokeWidth="1.5dp"
+                    app:chipStrokeColor="#00E5FF" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipIssues"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Issues"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/urgency_text_color"
+                    app:chipBackgroundColor="@color/urgency_standard_bg"
+                    app:chipSurfaceColor="@android:color/transparent"
+                    app:chipStrokeWidth="1.5dp"
+                    app:chipStrokeColor="#00E5FF" />
+            </com.google.android.material.chip.ChipGroup>
+        </HorizontalScrollView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#D3EFF5" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvAuditLogs"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="20dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="24dp"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            android:scrollbars="none" />
+
+        <!-- Empty State -->
+        <LinearLayout
+            android:id="@+id/tvEmptyLogs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingHorizontal="32dp"
+            android:visibility="gone">
+
+            <FrameLayout
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/circle_bg_light_aqua"
+                android:layout_marginBottom="16dp">
+
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:src="@android:drawable/ic_menu_search"
+                    app:tint="#00E5FF"
+                    android:contentDescription="No activity" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tvEmptyTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No activity yet"
+                android:textColor="#0A2A33"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvEmptySubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:lineSpacingExtra="3dp"
+                android:text="Activity from across the app will appear here in real time."
+                android:textColor="#A0C4D0"
+                android:textSize="13sp" />
+        </LinearLayout>
+    </FrameLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

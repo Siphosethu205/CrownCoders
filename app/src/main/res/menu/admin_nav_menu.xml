@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="none">
+
+        <item
+            android:id="@+id/nav_dashboard"
+            android:icon="@android:drawable/ic_menu_myplaces"
+            android:title="Dashboard" />
+
+        <item
+            android:id="@+id/nav_water_reports"
+            android:icon="@android:drawable/ic_menu_agenda"
+            android:title="Water Status Updates" />
+
+        <item
+            android:id="@+id/nav_emergency"
+            android:icon="@android:drawable/ic_dialog_alert"
+            android:title="Emergency Water Requests" />
+
+        <item
+            android:id="@+id/nav_infra_issues"
+            android:icon="@android:drawable/ic_menu_manage"
+            android:title="Infrastructure Issues" />
+
+        <item
+            android:id="@+id/nav_drivers"
+            android:icon="@android:drawable/ic_menu_myplaces"
+            android:title="Drivers Management" />
+
+        <item
+            android:id="@+id/nav_waterTanks"
+            android:icon="@android:drawable/ic_menu_directions"
+            android:title="Water Tanks Management" />
+
+        <item
+            android:id="@+id/nav_users"
+            android:icon="@android:drawable/ic_menu_manage"
+            android:title="Users Management" />
+
+        <item
+            android:id="@+id/nav_notifications"
+            android:icon="@android:drawable/ic_popup_reminder"
+            android:title="Send Notifications" />
+
+        <item
+            android:id="@+id/nav_stats"
+            android:icon="@android:drawable/ic_menu_sort_alphabetically"
+            android:title="Reports &amp; Statistics" />
+
+        <item
+            android:id="@+id/nav_audit"
+            android:icon="@android:drawable/ic_menu_recent_history"
+            android:title="Audit Logs" />
+
+    </group>
+
+    <item android:title="">
+        <menu>
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@android:drawable/ic_menu_close_clear_cancel"
+                android:title="Logout" />
+        </menu>
+    </item>
+
+</menu>
